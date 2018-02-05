@@ -3,7 +3,7 @@ dist: trusty
 mono: none 
 dotnet: 2.0.0
 script:
- - npm install -g webpack
+# - npm install -g webpack
 # - cd src/SimpleCQRS
  - dotnet restore SimpleCQRS.sln && dotnet build SimpleCQRS.sln
 # - cd wwwroot/react-app/
