@@ -11,9 +11,7 @@ namespace Simple.Cqrs
     public static class BootStrapper
     {
         public static void Configure(this IServiceCollection service)
-        {
-            //service.AddSingleton<IContainer, SimpleIocContainer>();//CommandDispatcher'ın constructorında ki IContainer için ekliyoruz
-
+        {      
             service.AddSingleton<ICommandDispatcher, CommandDispatcher>();
             service.AddSingleton<ICommandHandler<CreateTaskCommand>, CreateTaskCommandHandler>();
             service.AddSingleton<ICommandHandler<ChangeTaskStatusCommand>, ChangeTaskStatusCommandHandler>();
@@ -21,7 +19,7 @@ namespace Simple.Cqrs
             service.AddSingleton<IQueryDispatcher, QueryDispatcher>();
             service.AddSingleton<IQueryHandler<GetTasksQuery, IQueryable<Task>>, GetTasksQueryHandler>();
 
-            service.AddSingleton<BaseContext, TaskContext>();
+            service.AddSingleton<BaseDbContext, TaskContext>();
             service.AddSingleton<IReadRepository<Task>, BaseRepository<Task>>();
             service.AddSingleton<IWriteRepository<Task>, BaseRepository<Task>>();
         }

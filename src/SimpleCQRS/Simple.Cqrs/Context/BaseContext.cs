@@ -2,9 +2,9 @@
 
 namespace Simple.Cqrs.Context
 {
-    public class BaseContext : DbContext
+    public abstract class BaseDbContext : DbContext
     {
-        public BaseContext()            
+        protected BaseDbContext(DbContextOptions options) : base(options)
         {
             //Configuration.ProxyCreationEnabled = false;
             //Configuration.LazyLoadingEnabled = false;

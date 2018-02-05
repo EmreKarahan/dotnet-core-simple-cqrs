@@ -9,10 +9,10 @@ namespace Simple.Cqrs.Repository
 {
     public class BaseRepository<T> : IReadRepository<T>, IWriteRepository<T> where T : class
     {
-        private readonly BaseContext _dbContext;
+        private readonly BaseDbContext _dbContext;
         private readonly DbSet<T> _dbSet;
 
-        public BaseRepository(BaseContext dbContext)
+        public BaseRepository(BaseDbContext dbContext)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
             _dbSet = _dbContext.Set<T>();
