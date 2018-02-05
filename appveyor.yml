@@ -12,10 +12,10 @@ before_build:
   # Display .NET Core version
   - cmd: dotnet --version
   # Display minimal restore text
-  - cmd: dotnet restore ./src/SimpleCQRS/Simple.Cqrs/SimpleCQRS.csproj --verbosity m
+  - cmd: dotnet restore ./src/SimpleCQRS/Simple.Cqrs/Simple.Cqrs.csproj --verbosity m
 build_script:
   # output will be in ./src/SimpleCQRS/bin/debug/netcoreapp2.0/publish
-  - cmd: dotnet publish ./src/SimpleCQRS/Simple.Cqrs/SimpleCQRS.csproj
+  - cmd: dotnet publish ./src/SimpleCQRS/Simple.Cqrs/Simple.Cqrs.csproj
 after_build:
   # For once the build has completed
 artifacts:
